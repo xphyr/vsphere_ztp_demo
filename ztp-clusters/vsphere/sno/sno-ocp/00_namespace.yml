@@ -1,0 +1,13 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: sno-ocp
+  labels:
+    name: sno-ocp
+    cloud: vSphere
+    vendor: OpenShift
+    datacenter: Home
+    cluster: Lab
+    cluster-name: sno-ocp
+    cluster-domain: sno-ocp.xphyrlab.net
+    cluster-role: ztp-spoke

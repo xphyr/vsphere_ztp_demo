@@ -1,0 +1,27 @@
+---
+apiVersion: tower.ansible.com/v1alpha1
+kind: AnsibleJob
+metadata:
+  name: sno-ocp-vsphere-bootstrap
+  namespace: sno-ocp
+  labels:
+    name: sno-ocp
+    cloud: vSphere
+    vendor: OpenShift
+    datacenter: Home
+    cluster: Lab
+    cluster-name: sno-ocp
+    cluster-domain: sno-ocp.xphyrlab.net
+    cluster-role: ztp-spoke
+spec:
+  tower_auth_secret: ansible-tower-credentials
+  job_template_name: create-vsphere-infra-ztp
+  extra_vars:
+    vcenter_credentials_secret_namespace: sno-ocp
+    vcenter_credentials_secret_name: xphyrlab-vcenter-credentials
+
+    infraenv_namespace: sno-ocp
+    infraenv_name: sno-ocp
+
+    cluster_configmap_namespace: sno-ocp
+    cluster_configmap_name: sno-ocp-cluster-config
