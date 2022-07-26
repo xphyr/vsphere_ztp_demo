@@ -1,0 +1,40 @@
+---
+apiVersion: agent.open-cluster-management.io/v1
+kind: KlusterletAddonConfig
+metadata:
+  name: vsphere-ocpha
+  namespace: vsphere-ocpha
+  labels:
+    name: vsphere-ocpha
+    cloud: vSphere
+    vendor: OpenShift
+    datacenter: Home
+    cluster: Lab
+    cluster-name: vsphere-ocpha
+    cluster-domain: vsphere-ocpha.xphyrlab.net
+    cluster-role: ztp-spoke
+spec:
+  clusterName: vsphere-ocpha
+  clusterNamespace: vsphere-ocpha
+  clusterLabels:
+    name: vsphere-ocpha
+    cloud: vSphere
+    vendor: OpenShift
+    datacenter: Home
+    cluster: Lab
+    cluster-name: vsphere-ocpha
+    cluster-domain: vsphere-ocpha.xphyrlab.net
+    cluster-role: ztp-spoke
+    #cluster.open-cluster-management.io/clusterset: default
+  applicationManager:
+    enabled: true
+  policyController:
+    enabled: true
+  searchCollector:
+    enabled: true
+  certPolicyController:
+    enabled: true
+  iamPolicyController:
+    enabled: true
+  #workManager:
+  #  enabled: true

@@ -1,0 +1,13 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: vsphere-ocpha
+  labels:
+    name: vsphere-ocpha
+    cloud: vSphere
+    vendor: OpenShift
+    datacenter: Home
+    cluster: Lab
+    cluster-name: vsphere-ocpha
+    cluster-domain: vsphere-ocpha.xphyrlab.net
+    cluster-role: ztp-spoke
