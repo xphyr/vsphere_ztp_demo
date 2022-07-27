@@ -15,7 +15,6 @@ metadata:
     cluster-role: ztp-spoke
     agentclusterinstalls.extensions.hive.openshift.io/location: loe-rdu
     networkType: static
-    autoupgrade: true
 spec:
   agentLabels:
     agentclusterinstalls.extensions.hive.openshift.io/location: loe-rdu

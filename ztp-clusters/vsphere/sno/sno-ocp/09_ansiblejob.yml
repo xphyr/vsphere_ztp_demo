@@ -13,7 +13,6 @@ metadata:
     cluster-name: sno-ocp
     cluster-domain: sno-ocp.xphyrlab.net
     cluster-role: ztp-spoke
-    autoupgrade: true
 spec:
   tower_auth_secret: ansible-tower-credentials
   job_template_name: create-vsphere-infra-ztp

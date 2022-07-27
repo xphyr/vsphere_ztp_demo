@@ -11,4 +11,3 @@ metadata:
     cluster-name: sno-ocp
     cluster-domain: sno-ocp.xphyrlab.net
     cluster-role: ztp-spoke
-    autoupgrade: true
