@@ -1,0 +1,27 @@
+---
+apiVersion: tower.ansible.com/v1alpha1
+kind: AnsibleJob
+metadata:
+  name: vsphere-ocpha-vsphere-bootstrap
+  namespace: vsphere-ocpha
+  labels:
+    name: vsphere-ocpha
+    cloud: vSphere
+    vendor: OpenShift
+    datacenter: Home
+    cluster: Lab
+    cluster-name: vsphere-ocpha
+    cluster-domain: vsphere-ocpha.xphyrlab.net
+    cluster-role: ztp-spoke
+spec:
+  tower_auth_secret: ansible-tower-credentials
+  job_template_name: create-vsphere-infra-ztp
+  extra_vars:
+    vcenter_credentials_secret_namespace: vsphere-ocpha
+    vcenter_credentials_secret_name: xphyrlab-vcenter-credentials
+
+    infraenv_namespace: vsphere-ocpha
+    infraenv_name: vsphere-ocpha
+
+    cluster_configmap_namespace: vsphere-ocpha
+    cluster_configmap_name: vsphere-ocpha-cluster-config

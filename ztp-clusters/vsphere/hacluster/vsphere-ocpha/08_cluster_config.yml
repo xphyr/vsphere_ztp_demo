@@ -1,0 +1,30 @@
+---
+kind: ConfigMap 
+apiVersion: v1 
+metadata:
+  name: vsphere-ocpha-cluster-config
+  namespace: vsphere-ocpha
+  labels:
+    name: vsphere-ocpha
+    cloud: vSphere
+    vendor: OpenShift
+    datacenter: Home
+    cluster: Lab
+    cluster-name: vsphere-ocpha
+    cluster-domain: vsphere-ocpha.xphyrlab.net
+    cluster-role: ztp-spoke
+data:
+  cluster_name: vsphere-ocpha
+  cluster_domain: xphyrlab.net
+  cluster_provider: vsphere
+  cluster_type: full
+
+  #node_boot_timeout: '30'
+  node_count: '6'
+
+  vsphere_datacenter: Home
+  vsphere_cluster: Lab
+  vsphere_datastore: nassrv1-esx-ds2
+  vsphere_network: dpg25
+
+  cluster_nodes: '[{"name": "cp-zero", "type": "control-plane", "vm": {"cpu_cores": 4, "cpu_sockets": 1, "cpu_threads": 1, "memory": 16384, "disks": [{"size": 120, "name": "boot"}]}, "network": {"interfaces": [{"name": "ens192", "mac_address": "00:51:56:41:56:30", "dhcp": false, "ipv4": [{"address": "172.16.25.50", "prefix": 24}]}], "routes": [{"destination": "0.0.0.0/0", "next_hop_address": "172.16.25.1", "next_hop_interface": "ens192", "table_id": 254}]}}, {"name": "cp-one", "type": "control-plane", "vm": {"cpu_cores": 4, "cpu_sockets": 1, "cpu_threads": 1, "memory": 16384, "disks": [{"size": 120, "name": "boot"}]}, "network": {"interfaces": [{"name": "ens192", "mac_address": "00:51:56:41:56:31", "dhcp": false, "ipv4": [{"address": "172.16.25.51", "prefix": 24}]}], "routes": [{"destination": "0.0.0.0/0", "next_hop_address": "172.16.25.1", "next_hop_interface": "ens192", "table_id": 254}]}}, {"name": "cp-two", "type": "control-plane", "vm": {"cpu_cores": 4, "cpu_sockets": 1, "cpu_threads": 1, "memory": 16384, "disks": [{"size": 120, "name": "boot"}]}, "network": {"interfaces": [{"name": "ens192", "mac_address": "00:51:56:41:56:32", "dhcp": false, "ipv4": [{"address": "172.16.25.52", "prefix": 24}]}], "routes": [{"destination": "0.0.0.0/0", "next_hop_address": "172.16.25.1", "next_hop_interface": "ens192", "table_id": 254}]}}, {"name": "app-one", "type": "application-node", "vm": {"cpu_cores": 2, "cpu_sockets": 1, "cpu_threads": 1, "memory": 8192, "disks": [{"size": 120, "name": "boot"}]}, "network": {"interfaces": [{"name": "ens192", "mac_address": "00:51:56:41:56:33", "dhcp": false, "ipv4": [{"address": "172.16.25.53", "prefix": 24}]}], "routes": [{"destination": "0.0.0.0/0", "next_hop_address": "172.16.25.1", "next_hop_interface": "ens192", "table_id": 254}]}}, {"name": "app-two", "type": "application-node", "vm": {"cpu_cores": 2, "cpu_sockets": 1, "cpu_threads": 1, "memory": 8192, "disks": [{"size": 120, "name": "boot"}]}, "network": {"interfaces": [{"name": "ens192", "mac_address": "00:51:56:41:56:34", "dhcp": false, "ipv4": [{"address": "172.16.25.54", "prefix": 24}]}], "routes": [{"destination": "0.0.0.0/0", "next_hop_address": "172.16.25.1", "next_hop_interface": "ens192", "table_id": 254}]}}, {"name": "app-three", "type": "application-node", "vm": {"cpu_cores": 2, "cpu_sockets": 1, "cpu_threads": 1, "memory": 8192, "disks": [{"size": 120, "name": "boot"}]}, "network": {"interfaces": [{"name": "ens192", "mac_address": "00:51:56:41:56:35", "dhcp": false, "ipv4": [{"address": "172.16.25.55", "prefix": 24}]}], "routes": [{"destination": "0.0.0.0/0", "next_hop_address": "172.16.25.1", "next_hop_interface": "ens192", "table_id": 254}]}}]'

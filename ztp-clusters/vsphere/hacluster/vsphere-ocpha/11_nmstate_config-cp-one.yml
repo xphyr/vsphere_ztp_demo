@@ -1,0 +1,44 @@
+---
+apiVersion: agent-install.openshift.io/v1beta1
+kind: NMStateConfig
+metadata:
+  name: cp-one-vsphere-ocpha
+  namespace: vsphere-ocpha
+  labels:
+    name: vsphere-ocpha
+    cloud: vSphere
+    vendor: OpenShift
+    datacenter: Home
+    cluster: Lab
+    cluster-name: vsphere-ocpha
+    cluster-domain: vsphere-ocpha.xphyrlab.net
+    cluster-role: ztp-spoke
+    hostname: cp-one.vsphere-ocpha.xphyrlab.net
+spec:
+  config:
+    dns-resolver:
+      config:
+        server:
+          - 172.16.25.10
+          - 192.168.5.31
+        search:
+          - xphyrlab.net
+    interfaces:
+      - ipv4:
+          address:
+            - ip: 172.16.25.51
+              prefix-length: 24
+          dhcp: False
+          enabled: true
+        name: ens192
+        state: up
+        type: ethernet
+    routes:
+      config:
+        - destination: 0.0.0.0/0
+          next-hop-address: 172.16.25.1
+          next-hop-interface: ens192
+          table-id: 254
+  interfaces:
+    - name: ens192
+      macAddress: 00:51:56:41:56:31
