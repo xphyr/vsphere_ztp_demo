@@ -13,6 +13,7 @@ metadata:
     cluster-name: sno-ocp
     cluster-domain: sno-ocp.xphyrlab.net
     cluster-role: ztp-spoke
+    autoupgrade: true
     #cluster.open-cluster-management.io/clusterset: default
 spec:
   hubAcceptsClient: true
