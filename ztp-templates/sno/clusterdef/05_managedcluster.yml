@@ -2,16 +2,16 @@
 apiVersion: cluster.open-cluster-management.io/v1
 kind: ManagedCluster
 metadata:
-  name: sno-ocp
-  namespace: sno-ocp
+  name: vzocp
+  namespace: vzocp
   labels:
-    name: sno-ocp
+    name: vzocp
     cloud: vSphere
     vendor: OpenShift
     datacenter: Home
     cluster: Lab
-    cluster-name: sno-ocp
-    cluster-domain: sno-ocp.xphyrlab.net
+    cluster-name: vzocp
+    cluster-domain: vzocp.xphyrlab.net
     cluster-role: ztp-spoke
     #cluster.open-cluster-management.io/clusterset: default
 spec:

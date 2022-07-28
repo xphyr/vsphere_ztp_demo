@@ -2,23 +2,23 @@
 apiVersion: extensions.hive.openshift.io/v1beta1
 kind: AgentClusterInstall
 metadata:
-  name: sno-ocp
-  namespace: sno-ocp
+  name: vzocp
+  namespace: vzocp
   annotations:
     agent-install.openshift.io/install-config-overrides: '{"platform": {"type": "vsphere"}}'
     #agent-install.openshift.io/install-config-overrides: '{"platform":{"type":"vsphere"}}'
   labels:
-    name: sno-ocp
+    name: vzocp
     cloud: vSphere
     vendor: OpenShift
     datacenter: Home
     cluster: Lab
-    cluster-name: sno-ocp
-    cluster-domain: sno-ocp.xphyrlab.net
+    cluster-name: vzocp
+    cluster-domain: vzocp.xphyrlab.net
     cluster-role: ztp-spoke
 spec:
   clusterDeploymentRef:
-    name: sno-ocp
+    name: vzocp
   imageSetRef:
     name: openshift-v4.10.3
   holdInstallation: false

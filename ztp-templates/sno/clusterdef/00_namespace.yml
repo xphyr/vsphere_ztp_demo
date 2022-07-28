@@ -1,13 +1,13 @@
 kind: Namespace
 apiVersion: v1
 metadata:
-  name: sno-ocp
+  name: vzocp
   labels:
-    name: sno-ocp
+    name: vzocp
     cloud: vSphere
     vendor: OpenShift
     datacenter: Home
     cluster: Lab
-    cluster-name: sno-ocp
-    cluster-domain: sno-ocp.xphyrlab.net
+    cluster-name: vzocp
+    cluster-domain: vzocp.xphyrlab.net
     cluster-role: ztp-spoke
