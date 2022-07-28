@@ -1,0 +1,13 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: vzocp
+  labels:
+    name: vzocp
+    cloud: vSphere
+    vendor: OpenShift
+    datacenter: Home
+    cluster: Lab
+    cluster-name: vzocp
+    cluster-domain: vzocp.xphyrlab.net
+    cluster-role: ztp-spoke
