@@ -1,0 +1,38 @@
+---
+apiVersion: hive.openshift.io/v1
+kind: ClusterDeployment
+metadata:
+  annotations:
+    agentBareMetal-agentSelector/autoSelect: "true"
+  name: vzocp
+  namespace: vzocp
+  labels:
+    name: vzocp
+    cloud: vSphere
+    vendor: OpenShift
+    datacenter: Home
+    cluster: Lab
+    cluster-name: vzocp
+    cluster-domain: vzocp.xphyrlab.net
+    cluster-role: ztp-spoke
+    #hive.openshift.io/cluster-platform: agent-baremetal
+    #cluster.open-cluster-management.io/clusterset: default
+spec:
+  baseDomain: xphyrlab.net
+  clusterName: vzocp
+  #controlPlaneConfig:
+  #  servingCertificates: {}
+  installed: false
+  clusterInstallRef:
+    group: extensions.hive.openshift.io
+    kind: AgentClusterInstall
+    name: vzocp
+    version: v1beta1
+  platform:
+    agentBareMetal:
+      agentSelector:
+        matchLabels:
+          cluster-name: vzocp
+          agentBareMetal-generated-infraenv-ai-flow: vzocp
+  pullSecretRef:
+    name: ztp-deployment-pull-secret
